@@ -158,6 +158,7 @@ class GraphLlamaModel(LlamaModel):
         self.config.graph_select_layer = graph_select_layer
 
         if not hasattr(self, 'graph_projector'):
+            self.config.graph_hidden_size = 512
             self.graph_projector = nn.Linear(self.config.graph_hidden_size, self.config.hidden_size)
 
         if pretrain_graph_mlp_adapter is not None:
