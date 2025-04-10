@@ -798,6 +798,7 @@ def train():
             cache_dir=training_args.cache_dir,
             **bnb_model_from_pretrained_args
         )
+    model.config.pretrain_graph_model_path = './'
     model.config.pretrain_graph_model_path = model.config.pretrain_graph_model_path + model_args.graph_tower
     model.config.use_cache = False
 
