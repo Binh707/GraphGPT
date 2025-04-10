@@ -553,7 +553,7 @@ class LazySupervisedDataset(Dataset):
         self.list_data_dict = list_data_dict
         self.graph_cfg = graph_cfg
         graph_data_path = kwargs.get('graph_data_path')
-        self.graph_data_all = torch.load(graph_data_path)
+        self.graph_data_all = torch.load(graph_data_path, weights_only=False)
 
     def __len__(self):
         return len(self.list_data_dict)
